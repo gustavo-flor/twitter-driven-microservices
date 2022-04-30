@@ -1,0 +1,7 @@
+spring:
+  main:
+    banner-mode: off
+  application:
+    name: twitter-stream-service
+twitter:
+  keywords: ['Valorant', 'League of Legends']
