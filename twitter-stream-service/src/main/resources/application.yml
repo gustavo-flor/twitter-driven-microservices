@@ -3,5 +3,13 @@ spring:
     banner-mode: off
   application:
     name: twitter-stream-service
-twitter:
-  keywords: ['Valorant', 'League of Legends']
+twitter4j:
+  debug: true
+  oauth:
+    consumer-key: ${TWITTER_OAUTH_CONSUMER_KEY}
+    consumer-secret: ${TWITTER_OAUTH_CONSUMER_SECRET}
+    access-token: ${TWITTER_OAUTH_ACCESS_TOKEN}
+    access-token-secret: ${TWITTER_OAUTH_ACCESS_TOKEN_SECRET}
+  keywords:
+    - 'Valorant'
+    - 'League of Legends'

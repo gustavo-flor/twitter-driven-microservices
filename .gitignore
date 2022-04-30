@@ -5,6 +5,8 @@ logs/
 !**/src/main/**/logs/
 !**/src/test/**/logs/
 
+**/.env
+
 ### STS ###
 .apt_generated
 .classpath

@@ -1,6 +1,6 @@
 package com.github.gustavoflor.tdm.twitterstreamservice.listener.runner;
 
-import com.github.gustavoflor.tdm.twitterstreamservice.config.TwitterConfigProperties;
+import com.github.gustavoflor.tdm.twitterstreamservice.config.properties.Twitter4JConfigProperties;
 import com.github.gustavoflor.tdm.twitterstreamservice.listener.TweetListener;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -13,15 +13,16 @@ import javax.annotation.PreDestroy;
 @Component
 @RequiredArgsConstructor
 public class TweetListenerRunner implements ListenerRunner {
-    private final TwitterConfigProperties twitterConfigProperties;
+    private final Twitter4JConfigProperties twitter4JConfigProperties;
     private final TweetListener tweetListener;
+    private final TwitterStreamFactory twitterStreamFactory;
 
     private TwitterStream twitterStream;
 
     @Override
     public void start() {
-        final FilterQuery filterQuery = new FilterQuery(twitterConfigProperties.getKeywords().toArray(String[]::new));
-        twitterStream = TwitterStreamFactory.getSingleton().addListener(tweetListener).filter(filterQuery);
+        final FilterQuery filterQuery = new FilterQuery(twitter4JConfigProperties.keywords().toArray(String[]::new));
+        twitterStream = twitterStreamFactory.getInstance().addListener(tweetListener).filter(filterQuery);
     }
 
     @PreDestroy
