@@ -13,6 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <properties>
         <java.version>17</java.version>
+        <twitter4j-stream.version>4.0.7</twitter4j-stream.version>
     </properties>
     <dependencies>
         <dependency>
@@ -36,7 +37,7 @@
         <dependency>
             <groupId>org.twitter4j</groupId>
             <artifactId>twitter4j-stream</artifactId>
-            <version>4.0.7</version>
+            <version>${twitter4j-stream.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

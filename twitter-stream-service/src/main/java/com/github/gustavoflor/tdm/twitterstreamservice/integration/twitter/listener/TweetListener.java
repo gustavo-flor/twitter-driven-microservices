@@ -1,4 +1,4 @@
-package com.github.gustavoflor.tdm.twitterstreamservice.listener;
+package com.github.gustavoflor.tdm.twitterstreamservice.integration.twitter.listener;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;

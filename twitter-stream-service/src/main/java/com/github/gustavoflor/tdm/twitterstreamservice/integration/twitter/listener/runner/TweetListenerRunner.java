@@ -1,7 +1,7 @@
-package com.github.gustavoflor.tdm.twitterstreamservice.listener.runner;
+package com.github.gustavoflor.tdm.twitterstreamservice.integration.twitter.listener.runner;
 
 import com.github.gustavoflor.tdm.twitterstreamservice.config.properties.Twitter4JConfigProperties;
-import com.github.gustavoflor.tdm.twitterstreamservice.listener.TweetListener;
+import com.github.gustavoflor.tdm.twitterstreamservice.integration.twitter.listener.TweetListener;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import twitter4j.FilterQuery;
@@ -26,7 +26,6 @@ public class TweetListenerRunner implements ListenerRunner {
     }
 
     @PreDestroy
-    @Override
     public void shutdown() {
         twitterStream.shutdown();
     }
